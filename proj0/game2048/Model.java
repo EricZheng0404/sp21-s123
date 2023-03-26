@@ -157,8 +157,8 @@ public class Model extends Observable {
         int size = b.size();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (b.tile(i, j) != null && b.tile(i, j).value() == MAX_PIECE) {
-                    return true;
+                if (b.tile(i, j) != null && b.tile(i, j).value() == MAX_PIECE) { // Must consider null values
+                    return true; // It has a return already, which breaks the loop
                 }
             }
         }
@@ -172,7 +172,6 @@ public class Model extends Observable {
      * 2. There are two adjacent tiles with the same value.
      */
     public static boolean atLeastOneMoveExists(Board b) {
-        // TODO: Fill in this function.
         return false;
     }
 
